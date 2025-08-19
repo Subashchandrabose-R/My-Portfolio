@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio.com</title>
+  <link rel="icon" type="image/png" href="./logoimg.png" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <h1 class="logo">Subashchandrabose R</h1>
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Qualification</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certification</a></li>
+        <li><a href="#internships">Intern</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-overlay" id="navOverlay"></div>
+    </div>
+  </nav>
+  
+
+  <header class="hero" id="home">
+    <div class="hero-content" data-aos="fade-up">
+      <div class="container">
+      <div class="image-container">
+      <img src="./profile.jpg" alt="Profile Picture" class="profile-pic1" />
+      </div>
+      <h2>Hello, I'm Subash</h2>
+      <p>A Java Software Developer, MySQL, front-end development, and UI/UX, passionate about crafting efficient, scalable, and impactful digital solutions.</p>
+      <a href="#projects" class="btn">View Projects</a>
+    </div>
+    </div>
+  </header>
+
+  <section id="about" class="section container" data-aos="fade-right">
+    <div class="container">
+    <div> <h2>About Me</h2> </div>
+    <div class="about-content">
+      <img src="./profile.jpg" alt="Profile Picture" class="profile-pic" />
+      <div>
+        <p>To secure a challenging Java Software Developer role, utilizing
+my skills in Java, MySQL, and object-oriented programming to
+build dynamic, efficient, and scalable applications, contribute
+to organizational success, and improve my technical skills in a
+collaborative and innovative environment.</p>
+        <ul>
+          <li><strong>Location:</strong>Tiruppur, Tamil Nadu, India</li>
+          <li><strong>Email:</strong> subashchandraboser1@gmail.com</li>
+          <li><strong>Education:</strong> B.E in Computer Science and Engineering</li>
+        </ul>
+      </div>
+     </div>
+    </div>
+  </section>
+
+   <section id="skills" class="section alt-section" data-aos="fade-left">
+    <div class="container1">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">JAVA</div>
+        <div class="skill-card">MySQL</div>
+        <div class="skill-card">HTML</div>
+        <div class="skill-card">CSS</div>
+        <div class="skill-card">UI/UX Designing</div>
+        <div class="skill-card">FIGMA</div>
+        <div class="skill-card">Git & GitHub</div>
+        <div class="skill-card">CANVA</div>
+        <div class="skill-card">(BASIC)Stock Market Analysis</div>
+      </div>
+    </div>
+  </section>
+   
+  <section id="education" class="education-section" data-aos="fade-down">
+  <h2>Education</h2>
+  <div class="timeline-container" data-aos="fade-down">
+    <div class="timeline-item left" data-aos="fade-right">
+      <div class="content">
+        <h3>SSLC</h3>
+        <p>Raja National Matriculation Higher Sec School<br><i class="fas fa-calendar-alt"></i> - 2019</p>
+        <a href="#edu-popup" class="view-link" onclick="openPopup('popup-sslc')">View More →</a>
+        <!-- Popup Modal for Class 10th -->
+<div class="edu-popup" id="popup-sslc">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('popup-sslc')">&times;</span>
+    <h3>Class 10th Summary :</h3>
+    <p>⏱ Subjects studied: Science, Maths, English, Social Studies, Tamil.</p>
+    <p>⏱ Scored 61%</p>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="timeline-item right" data-aos="fade-left">
+      <div class="content">
+        <h3>Class 12th</h3>
+        <p>Raja National Matriculation Higher Sec School<br><i class="fas fa-calendar-alt"></i> - 2021</p>
+        <a href="#edu-popup" class="view-link" onclick="openPopup('popup-12th')">View More →</a>
+
+        <!-- Popup Modal for Class 10th -->
+<div class="edu-popup" id="popup-12th">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('popup-12th')">&times;</span>
+    <h3>Class 12th Summary :</h3>
+    <p>⏱ Subjects studied: Physics, Chemistry, Maths, English, Tamil , Cs.</p>
+    <p>⏱ Scored 72%</p>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="timeline-item left" data-aos="fade-right">
+      <div class="content">
+        <h3>College</h3>
+        <p>P.A. College of Engineering and Technology, Pollachi<br><i class="fas fa-calendar-alt"></i> 2021 - 2025</p>
+        <a href="#edu-popup" class="view-link" onclick="openPopup('popup-college')">View More →</a>
+        <!-- Popup Modal for Class 10th -->
+<div class="edu-popup" id="popup-college">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('popup-college')">&times;</span>
+    <h3>College Summary :</h3>
+    <p>⏱ Studying core subjects of IT including DSA, Java, Operating systems, UI/UX Designing and MySQL Database(RDBMS).</p>
+    <p>⏱ Scored 81%</p>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="timeline-item right" data-aos="fade-left">
+      <div class="content">
+        <h3>Open To Work</h3>
+        <p>Software Development LifeCycle<br><i class="fas fa-calendar-alt"></i> 2025 - Present</p>
+        <a href="#edu-popup" class="view-link" onclick="openPopup('popup-work')">View More →</a>
+        <!-- Popup Modal for Class 10th -->
+<div class="edu-popup" id="popup-work">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('popup-work')">&times;</span>
+    <h3>Fresher :</h3>
+    <p>⏱ Interested in Java Software Development,UI/UX Designing and Frontend Developer.</p>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section id="projects" class="section container" data-aos="fade-up">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Used Car Price Prediction</h3>
+        <p>ML project using CNN for predicting car prices from past data.</p>
+        <a href="https://github.com/Subashchandrabose-R" target="_blank" class="btn-secondary">View Details</a>
+      </div>
+      <div class="project-card">
+        <h3>Trix-Shop E-Commerce Site</h3>
+        <p>Full-stack app with login, cart, and payment integrations.</p>
+        <a href="https://ecommercewebsite-60034471771.development.catalystserverless.in/app/index.html" target="_blank" class="btn-secondary">View Details</a>
+      </div>
+      <div class="project-card">
+        <h3>UI/UX (Figma) Project's</h3>
+        <p>UI/UX Designing for a Website User Interface and
+application model development using Figma.</p>
+        <a href="https://www.figma.com/proto/HnjFMNDIHAPmI7FvkoPmmy?node-id=0:1" target="_blank" class="btn-secondary">Property Rental application</a>
+        <a href="https://www.figma.com/proto/sX3gt3jQocyz4UTVP6NpTh?node-id=0:1" target="_blank" class="btn-secondary">Watch store</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications" class="module-section container" data-aos="fade-up">
+  <h2>Certifications</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <h3>Java Programming Certificate</h3>
+      <p>Issued by Great Learning for completing foundational Java training.</p>
+    </div>
+    <div class="project-card">
+      <h3>Stock Market Awareness</h3>
+      <p>Presented a research paper on stock market
+fundamentals at technical symposiums held at Jai
+Shriram Engineering College and Nandha College
+of Technology.</p>
+    </div>
+    <div class="project-card">
+      <h3>Industrial Robotics Workshop</h3>
+      <p>Attended hands-on workshop on industrial
+robotics at Karpagam College of Engineering and
+Technology.</p>
+    </div>
+  </div>
+</section>
+
+<section id="internships" class="module-section container" data-aos="fade-up">
+  <h2>Internships</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <h3>Java Developer Intern</h3>
+      <p>Interned at INSOURCE
+Technologies, developed Java REST APIs and worked with MySQL backend.</p>
+    </div>
+    <div class="project-card">
+      <h3>Python Developer Intern</h3>
+      <p>Interned at R2C
+Technologies, Python Development.</p>
+    </div>
+  </div>
+</section>
+
+<section id="activities" class="module-section container" data-aos="fade-up">
+  <h2>Extracurricular Activities</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <h3>Volunteer Work</h3>
+      <p>✅ Member, Indian Society for Technical
+Education (ISTE).</p>
+      <p>✅ Member, Institute of Electrical and
+Electronics Engineers (IEEE).</p>
+      <p>✅ Volunteer, National Service Scheme (NSS).</p>
+    </div>
+    <div class="project-card">
+      <h3>Paper Presentation's</h3>
+      <p>Represented college at multiple Paper Presentation's - college debate tournaments.</p>
+    </div>
+  </div>
+</section>
+
+  <section id="contact" class="alt-section section" data-aos="fade-down">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <form id="contactForm" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <a href="mailto:subashchandraboser1@gmail.com" button type="submit" class="btn">Send Message</button></a>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; 2025 Subashchandrabose R Portfolio. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://github.com/Subashchandrabose-R" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="http://linkedin.com/in/subashchandrabose-r-b54580231" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:subashchandraboser1@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script src="/client/main.js"></script>
+  <script>
+  function openPopup(id) {
+    document.getElementById(id).classList.add("active");
+  }
+
+  function closePopup(id) {
+    document.getElementById(id).classList.remove("active");
+  }
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
+    const navOverlay = document.getElementById("navOverlay");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      navOverlay.classList.toggle("active");
+    });
+
+    navOverlay.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+      navOverlay.classList.remove("active");
+    });
+  });
+</script>
+
+
+</body>
+
+</html>
