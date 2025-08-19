@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Prediction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --background-color: #f8fafc;
+            --text-color: #1e293b;
+            --border-color: #e2e8f0;
+            --input-background: #ffffff;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--input-background);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow);
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        input, select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            background: var(--input-background);
+            font-size: 1rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .file-upload {
+            border: 2px dashed var(--border-color);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        .file-upload:hover {
+            border-color: var(--primary-color);
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Car Price Prediction</h1>
+        <form action="{{ url_for('predict') }}" method="post" enctype="multipart/form-data">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="year">Manufacturing Year</label>
+                    <input type="number" id="year" name="year" required placeholder="Enter year">
+                </div>
+
+                <div class="form-group">
+                    <label for="km_driven">Kilometers Driven</label>
+                    <input type="number" id="km_driven" name="km_driven" required placeholder="Enter kilometers">
+                </div>
+
+                <div class="form-group">
+                    <label for="fuel">Fuel Type</label>
+                    <select id="fuel" name="fuel" required>
+                        <option value="" disabled selected>Select fuel type</option>
+                        <option value="Diesel">Diesel</option>
+                        <option value="Petrol">Petrol</option>
+                        <option value="CNG">CNG</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="seller_type">Seller Type</label>
+                    <select id="seller_type" name="seller_type" required>
+                        <option value="" disabled selected>Select seller type</option>
+                        <option value="Individual">Individual</option>
+                        <option value="Dealer">Dealer</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="transmission">Transmission</label>
+                    <select id="transmission" name="transmission" required>
+                        <option value="" disabled selected>Select transmission</option>
+                        <option value="Manual">Manual</option>
+                        <option value="Automatic">Automatic</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="owner">Owner</label>
+                    <select id="owner" name="owner" required>
+                        <option value="" disabled selected>Select owner</option>
+                        <option value="First Owner">First Owner</option>
+                        <option value="Second Owner">Second Owner</option>
+                        <option value="Third Owner">Third Owner</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mileage">Mileage (kmpl)</label>
+                    <input type="text" id="mileage" name="mileage" required placeholder="Enter mileage">
+                </div>
+
+                <div class="form-group">
+                    <label for="engine">Engine (CC)</label>
+                    <input type="text" id="engine" name="engine" required placeholder="Enter engine capacity">
+                </div>
+
+                <div class="form-group">
+                    <label for="max_power">Max Power (bhp)</label>
+                    <input type="text" id="max_power" name="max_power" required placeholder="Enter max power">
+                </div>
+
+                <div class="form-group">
+                    <label for="torque">Torque (Nm)</label>
+                    <input type="text" id="torque" name="torque" required placeholder="Enter torque">
+                </div>
+
+                <div class="form-group">
+                    <label for="seats">Number of Seats</label>
+                    <input type="number" id="seats" name="seats" required placeholder="Enter number of seats">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="file-upload">
+                    <label for="file">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <p>Drop your car image here or click to upload</p>
+                    </label>
+                    <input type="file" id="file" name="file" required style="display: none;">
+                </div>
+            </div>
+
+            <button type="submit">Predict Price</button>
+        </form>
+    </div>
+</body>
+</html>
